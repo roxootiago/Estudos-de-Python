@@ -13,7 +13,7 @@ class Conta:
         print(f"{'-' * 50}\n{' ' * 11}Bem vindo ao Banco Python\n{'-' * 50}\n"
               f"Titular: {self.titular}\nConta: {self.__conta}\nSaldo: R$"
               f"{self.__saldo}\nData do extrato:"
-              f"{datetime.datetime.now().strftime('%d')}/"
+              f" {datetime.datetime.now().strftime('%d')}/"
               f"{datetime.datetime.now().strftime('%m')}/"
               f"{datetime.datetime.now().strftime('%Y')}\nHora "
               f"do "
@@ -37,7 +37,7 @@ class Conta:
               f"Você recebeu uma transferência de {self.titular.upper()}"
               f"\nValor"
               f" recebido: R${valor}\nData da transferência:"
-              f"{datetime.datetime.now().strftime('%d')}/"
+              f" {datetime.datetime.now().strftime('%d')}/"
               f"{datetime.datetime.now().strftime('%m')}/"
               f"{datetime.datetime.now().strftime('%Y')}\nHora "
               f"da transferência: "
@@ -48,15 +48,14 @@ class Conta:
     def get_limite(self):
         return self.__limite
 
-    def set_limite(self, newLimite):
+    def limite(self, newLimite):
         self.__limite = newLimite
         return self.__limite
 
-    def AumentoDeLimite(self, valor):
+    def AumentoDeLimite(self,valor):
         print(f"{'-' * 50}\n{' ' * 11}Bem vindo ao Banco Python\n{'-' * 50}\n"
               f"Olá, {self.titular}\nSeu limite do cartão foi de R$"
-              f"{self.get_limite()} para R${self.set_limite(valor)}")
-
+              f"{self.limite} para R${self.limite(valor)}")
 
 
 outraRef = None  # aponta para nenhuma referência
