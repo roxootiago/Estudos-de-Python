@@ -45,6 +45,18 @@ class Conta:
               f"{datetime.datetime.now().strftime('%M')}"
               f"{datetime.datetime.now().strftime('%p').lower()}\n")
 
+    def get_limite(self):
+        return self.__limite
+
+    def set_limite(self, newLimite):
+        self.__limite = newLimite
+        return self.__limite
+
+    def AumentoDeLimite(self, valor):
+        print(f"{'-' * 50}\n{' ' * 11}Bem vindo ao Banco Python\n{'-' * 50}\n"
+              f"Olá, {self.titular}\nSeu limite do cartão foi de R$"
+              f"{self.get_limite()} para R${self.set_limite(valor)}")
+
 
 nomeTitular = input("Digite o nome completo do titular: ").title()
 conta1 = Conta(222, nomeTitular, 212, 10)  # variável nomeia-se "referência"
@@ -61,5 +73,7 @@ conta2.Transferir(valorRecebido, conta1)  # origem.Transferir(<valor>,<destino>)
 
 conta2.Transferencia(valorRecebido)
 conta2.Extrato()
+
+conta3.AumentoDeLimite(1500)
 
 outraRef = None  # aponta para nenhuma referência
